@@ -43,7 +43,7 @@ function Home(): JSX.Element {
   }
 
   const showChatStream = () => {
-    return chats.map((item, key) => {
+    return chats?.map((item, key) => {
       return <View 
       key={key}
       style={{
@@ -77,8 +77,10 @@ function Home(): JSX.Element {
   const showLoadingOverlay = () => {
     if(showOverlay) {
       return(
-        <View style={{position: 'absolute', backgroundColor: 'rgba(255,255,255,0.75)', width: '100%', height: '100%', alignContent: 'center', alignItems: 'center', justifyContent: 'center'}}>
-          <Text style={{fontSize: 28}}>Loading...</Text>
+        <View style={{position: 'absolute', backgroundColor: 'rgba(0,0,0,0.75)', width: '100%', height: '100%', alignContent: 'center', alignItems: 'center', justifyContent: 'center'}}>
+          <View style={{backgroundColor: 'rgba(255,255,255,0.75)', padding: 35, borderRadius: 15}}> 
+            <Text style={{fontSize: 28}}>Loading...</Text>
+          </View>
         </View>
       )
     } else {
